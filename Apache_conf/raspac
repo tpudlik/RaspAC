@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+    ServerName raspac.pudlik.net
+
+    WSGIDaemonProcess raspac user=flask group=www-data threads=5 home=/var/www/$
+    WSGIScriptAlias / /var/www/website/raspac.wsgi
+
+    <Directory /var/www/website>
+        WSGIProcessGroup raspac
+        WSGIApplicationGroup %{GLOBAL}
+        WSGIScriptReloading On
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>

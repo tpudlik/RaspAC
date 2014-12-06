@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="A Raspberry Pi webserver controlling an air conditioner" />
+	<meta name="author" content="Ted Pudlik" />
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='leaves.css') }}" title="Leaves" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.6" />
+	<title>RaspAC</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body class="light">
+<div id="layout">
+ 
+	<div class="row">
+		<div class="col c6">
+			<h1 class="aligncenter">RaspAC</h1>
+			<p class="aligncenter slogan">an air conditioner remote based on the Raspberry Pi</p>
+		</div>
+		<div class="col c6 aligncenter navmenu">
+			<p><a href="http://stat.duke.edu/~meb67/">MB's website</a> <a href="http://people.bu.edu/tpudlik">Ted's website</a></p>
+		</div>
+	</div>
+	  
+	<div class="row">
+		<div class="col c6 aligncenter headerimage">
+			<img src="{{ url_for('static', filename='IMG_1547.JPG') }}" width="460" height="345" alt="" />
+            <img src="{{ url_for('static', filename='IMG_1550.JPG') }}" width="460" height="345" alt="" />
+            <!-- This is where the temperature and humidity plots will go one day -->
+		</div>
+	
+		<div class="col c6">
+            <p>
+            Welcome to the web server hosted on Ted's
+            <a href="http://www.raspberrypi.org/">Raspberry Pi</a>.  This
+            website can be used for controlling Ted & MB's living room air
+            conditioner.
+            </p>
+            
+            <p>
+            As of {{ last_record.time }} on {{ last_record.date }},
+            the temperature is {{ last_record.fahrenheit }}&deg;F
+            ({{ last_record.celsius }}&deg;C) and the
+            humidity is {{ last_record.humidity }}&#37;.
+            </p>
+            
+            <h3>Submit a command</h3>
+            {% block submitbox %}{% endblock %}
+            
+            <br/>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+            
+            <h3>Command history</h3>
+            <ul><!--I should create a custom class for this in the css-->
+            {% for command in commands %}
+                <li>{{ command.ts }}: {{ command.user }} issued {{ command.command }}</li><!--Some formatting of the command history-->
+            {% endfor %}
+            </ul>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col c12 alignright">
+			<p><span class="larger">&copy; 2013 Tadeusz Pudlik</span><br />
+			<a href="http://andreasviklund.com/dt_portfolio/leaves/">Template design</a> by <a href="http://andreasviklund.com/">Andreas Viklund</a>
+		</div>
+	</div>
+ </div>
+</body>
+</html>
