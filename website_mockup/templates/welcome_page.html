@@ -1,0 +1,24 @@
+{% extends "main_page.html" %}
+{% block submitbox %}
+    {% if error == 'username' %}
+        <p class="error"><strong>Error:</strong> Unknown username. Are you not Ted or MB? </p>
+    {% elif error == 'password' %}
+        <p class="error"><strong>Error:</strong> Username and password do not match. </p>
+    {% endif %}
+    
+    <form action="{{ url_for('welcome_page') }}" method="POST">
+        <table>
+            <tr>
+                <td class="label"> Username </td>
+                <td> <input type="text" name="username" tabindex=1/> </td>
+                <td rowspan="2">
+                    <input type="submit" value="Login" id="login_button" tabindex=3/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label"> Password </td>
+                <td> <input type="password" name="password" tabindex=2/> </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
