@@ -82,29 +82,10 @@ I found it most convenient to have a cron job spin it up on every reboot.
 
 #### Setting up the web app ####
 
-Odds are you know how do to this better than I do, but here are some step by
-step instructions just in case.
+Step by step instructions are forthcoming!
 
-Install `virtualenv`.  ***(How exactly?  What to install into the env?)***
-
-Place the `website` folder in /var/www.
-
-Install the Apache webserver:
-
-	sudo apt-get install apache2
-
-Install `mod_wsgi`:
-
-	apt-get install libapache2-mod-wsgi
-
-Finally, edit the server name in the Apache2 configuration file `raspac` 
-(provided in the `Apache_conf` folder of this package) and put it in
-`/etc/apache2/sites-available`.
-
-For more information on deploying Flask apps on an Apache webserver, see the
+For general information on deploying Flask apps on an Apache webserver, see the
 [tutorial](http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/).
-
-***(You need to get and set up a virtualenv somewhere here.  I'll need to review the Flask tutorial.)***
 
 
 ## Helpful references ##
@@ -121,7 +102,8 @@ in his AC control project.
 
 The parts of this software that I have written are covered by the MIT license. This
 excludes the following files:
-    * `leaves.css`
-    * `app.yaml`, `appengine_config.py`, `requirements.txt` and `vendor.py`, 
-      which I borrowed from the [Google App Engine Flask template](https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton).
-      These are covered by the Apache license.
+
+ * `leaves.css`
+ * `app.yaml`, `appengine_config.py`, `requirements.txt` and `vendor.py`, 
+   which I borrowed from the [Google App Engine Flask template](https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton).
+   These are covered by the Apache license.
