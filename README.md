@@ -12,8 +12,8 @@ On the software side, an Apache web server running on the Pi serves a
 replay previously recorded IR codes.  The Pi is connected to a couple high-
 brightness IR diodes which transmit the codes to the air conditioner.
 
-You can play with a mockup of the app [here](***link***).  It will accept the
-username 'Guest'.
+You can play with a mockup of the app [here](http://raspac-mockup.appspot.com).
+It will accept the username `Guest` and password `Guest`.
 
 
 ## How to put it together? ##
@@ -104,8 +104,6 @@ Finally, edit the server name in the Apache2 configuration file `raspac`
 For more information on deploying Flask apps on an Apache webserver, see the
 [tutorial](http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/).
 
-
-
 ***(You need to get and set up a virtualenv somewhere here.  I'll need to review the Flask tutorial.)***
 
 
@@ -121,5 +119,9 @@ in his AC control project.
 
 ## Licensing ##
 
-This software, with the exception of the `leaves.css` file which I have not
-written, is covered by the MIT license.
+The parts of this software that I have written are covered by the MIT license. This
+excludes the following files:
+    * `leaves.css`
+    * `app.yaml`, `appengine_config.py`, `requirements.txt` and `vendor.py`, 
+      which I borrowed from the [Google App Engine Flask template](https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton).
+      These are covered by the Apache license.

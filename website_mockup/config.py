@@ -11,10 +11,10 @@ DEBUG = False
 SECRET_KEY = 'mistyczneabecadlo'
 
 # Recognized usernames
-USERNAMES = ['Ted', 'MB', 'Thais', 'John']
+USERNAMES = ['Guest', 'Ted']
 
 # Password (the same for all users)
-PASSWORD = 'oodlesofdoodles'
+PASSWORD = 'Guest'
 
 # List of supported AC modes
 ACMODES = ['off', 'heat', 'cool']
