@@ -59,12 +59,12 @@ combination if your AC supports both heating and cooling modes.  The
 `lirc.conf` file I created for my LG AC is provided as an example.
 
 For more information on recording IR codes for ACs using LIRC, see
-[here](http://absurdlycertain.blogspot.com/2013/03/lirc-raspi-remote-control-configuration.html).
+[here](https://web.archive.org/web/20170201131003/http://absurdlycertain.blogspot.com/2013_03_01_archive.html).
 
 
 #### Setting up the temperature sensor ####
 
-I used [C code for the DHT provided by Adafruit](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/tree/master/Adafruit_DHT_Driver).
+I used [C code for the DHT provided by Adafruit](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/tree/legacy/Adafruit_DHT_Driver).
 After compiling `Adafruit_DHT.c` using the Makefile, change its ownership so
 that it can be ran without `sudo`:
 	
@@ -94,7 +94,7 @@ The idea of using the Raspberry Pi as an internet-enabled IR remote is not
 new, though most people use them to control TVs rather than ACs.  I found 
 Alex Bain's description of his [Open Source Universal Remote](http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/)
 particularly helpful.  Recording the IR codes is discussed by
-[Peter Li](http://absurdlycertain.blogspot.com/2013/03/lirc-raspi-remote-control-configuration.html)
+[Peter Li](https://web.archive.org/web/20170201131003/http://absurdlycertain.blogspot.com/2013_03_01_archive.html)
 in his AC control project.
 
 
@@ -107,3 +107,4 @@ excludes the following files:
  * `app.yaml`, `appengine_config.py`, `requirements.txt` and `vendor.py`, 
    which I borrowed from the [Google App Engine Flask template](https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton).
    These are covered by the Apache license.
+ * `Adafruit_DHT.c` (BSD license).
